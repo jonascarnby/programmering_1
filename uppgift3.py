@@ -14,6 +14,11 @@ def main():
         arrangedpali = arrange(pali)
         print (arrangedpali)
 
+        # reverse word and see if it is a palindrome
+
+        palindrome = showresult(arrangedpali)
+        print (palindrome)
+
 def createlist():
 
     ret = []
@@ -36,40 +41,26 @@ def createlist():
 def arrange(arrange_word):
 
     ret = []
-    symbols = ("'${}()[].,:;+-*/&|<>=~")
+    symbols = ("'${} ()[].,:;+-*/&!|<>=~")
     temp = ""
-    for element in arrange_word:
     
-        for ch in element:
-                if ch not in symbols:
-                    temp += ch
-
-
+    for bokstäver in arrange_word:
+        
+        if bokstäver not in symbols:
+                    temp += bokstäver
 
     ret.append(temp)
-    
-
-
-
-    pass
-    for i in range ( 0, len(arrange_word)):
-
-        if arrange_word[i] != (symbols):
-            ret.append(arrange_word)
-
-            print (ret)
-            
-
-            
 
         
-
     return (ret)
     
     
 
-def showresult():
-    pass
+def showresult(check_palindrome):
+
+    ret = reversed(check_palindrome)
+
+    return (ret)
 
 
 main()
