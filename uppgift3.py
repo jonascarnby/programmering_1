@@ -58,9 +58,20 @@ def arrange(arrange_word):
 
 def showresult(check_palindrome):
 
-    ret = reversed(check_palindrome)
+    
+    palindrome = []
+    
+    for c in check_palindrome[::-1]:
+        palindrome.append(c)
 
-    return (ret)
+        print (c)
+         
+
+        
+
+        
+    
+        return (palindrome)
 
 
 main()
