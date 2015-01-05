@@ -12,7 +12,7 @@ def main():
         # next thing with pali (arrange)
         
         arrangedpali = arrange(pali)
-        print (arrangedpali)
+        
 
         # reverse word and see if it is a palindrome
 
@@ -42,14 +42,12 @@ def arrange(arrange_word):
 
     ret = []
     symbols = ("'${} ()[].,:;+-*/&!|<>=~")
-    temp = ""
+    
     
     for bokstäver in arrange_word:
         
         if bokstäver not in symbols:
-                    temp += bokstäver
-
-    ret.append(temp)
+            ret.append(bokstäver)    
 
         
     return (ret)
@@ -64,7 +62,9 @@ def showresult(check_palindrome):
     for c in check_palindrome[::-1]:
         palindrome.append(c)
 
-        print (c)
+
+        word = "".join(palindrome)
+        print (word)
          
 
         
