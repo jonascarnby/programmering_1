@@ -21,6 +21,14 @@ def main():
 
         palindrome = showresult(arrangedpali)
 
+        while True:
+            print ("Det här är ett palindrome")
+
+            else:
+                print ("Det här är inte ett Palindrome")
+
+        
+
             
 # take input and create a list
 def createlist():
@@ -62,20 +70,14 @@ def showresult(check_palindrome):
 
     
     palindrome = []
-    
-    for c in check_palindrome[::-1]:
-        palindrome.append(c)
 
-    print (palindrome)
-
-
-    if palindrome == check_palindrome:
-        print ("Det här är ett Palindrome")
-    else:
-        print ("Det här är inte ett Palindrome") 
+    for c in range(len(check_palindrome)):
+        
+        if check_palindrome[c] != check_palindrome [-c-1]:
+            return False
+            
+    return True
                 
-    
-    return (palindrome)
 
 
 main()
