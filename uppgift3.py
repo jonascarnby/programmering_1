@@ -20,13 +20,11 @@ def main():
         
 
         palindrome = showresult(arrangedpali)
+        if palindrome == True:
+            print ("Det här är ett Palindrome!")
 
-        while True:
-            print ("Det här är ett palindrome")
-
-            else:
-                print ("Det här är inte ett Palindrome")
-
+        else:
+            print ("Det här är INTE ett Palindrome")
         
 
             
