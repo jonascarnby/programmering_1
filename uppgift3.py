@@ -1,24 +1,28 @@
 # -*- coding: UTF-8 -*-
 
 
+"""
+Jonas Carnby
+Python ver 3.4.1
+OSX 10.9.5
+"""
+
 
 def main():
 
     while True:
 
+    
         pali = createlist() 
-        print (pali)
         
-        # next thing with pali (arrange)
         
         arrangedpali = arrange(pali)
         
 
-        # reverse word and see if it is a palindrome
-
         palindrome = showresult(arrangedpali)
-        print (palindrome)
 
+            
+# take input and create a list
 def createlist():
 
     ret = []
@@ -26,7 +30,7 @@ def createlist():
     while True:
         
         try:
-            word = list(input("Skriv det ordet du vill du vill kontrollera: "))
+            word = list(input("Skriv det ordet du vill du vill kontrollera: ").lower())
 
             ret.extend(word)
 
@@ -37,7 +41,7 @@ def createlist():
 
     return (ret)
 
-        
+# arrrange list and remove unwanted symbols       
 def arrange(arrange_word):
 
     ret = []
@@ -53,7 +57,7 @@ def arrange(arrange_word):
     return (ret)
     
     
-
+# reverse list and check if it is a palindrome
 def showresult(check_palindrome):
 
     
@@ -62,16 +66,16 @@ def showresult(check_palindrome):
     for c in check_palindrome[::-1]:
         palindrome.append(c)
 
+    print (palindrome)
 
-        word = "".join(palindrome)
-        print (word)
-         
 
-        
-
-        
+    if palindrome == check_palindrome:
+        print ("Det här är ett Palindrome")
+    else:
+        print ("Det här är inte ett Palindrome") 
+                
     
-        return (palindrome)
+    return (palindrome)
 
 
 main()
