@@ -24,6 +24,11 @@ def check():
     else:
         svarLabel.config(text="Din inmatning är inte ett Palindrome")
 
+def quit():
+    result = messagebox.askyesno('Avsluta programmet', 'Vill du verkligen avsluta programmet?')
+    if result == True:
+        mGui.destroy() 
+
 
 ment = StringVar()
 
@@ -50,10 +55,9 @@ info_knapp.pack(side="left")
 
 svarLabel = Label(midFrame, text = "")
 
-
 spara_knapp = Button(bottomFrame, text = "Spara Palindrome")
 spara_knapp.pack(side="left")
-avsluta_knapp = Button(bottomFrame, text = "Avsluta")
+avsluta_knapp = Button(bottomFrame, text = "Avsluta", command = quit)
 avsluta_knapp.pack(side="right")
 
 mGui.mainloop()
