@@ -11,7 +11,19 @@ Uppgift 5
 import sys
 from tkinter import *
 import tkinter.messagebox
-import JonasCarnbyUppgift3py3.4.1 as paliCheck
+import JonasCarnbyUppgift3py3 as paliCheck
+
+def check():
+
+    x = str(ment.get())
+    c = paliCheck.check(x)
+
+    if c == True:
+        svarLabel.config(text="Din inmatning är ett Palindrome")
+
+    else:
+        svarLabel.config(text="Din inmatning är inte ett Palindrome")
+
 
 paliCheck.check
 
@@ -43,18 +55,6 @@ spara_knapp = Button(bottomFrame, text = "Spara Palindrome")
 spara_knapp.pack(side="left")
 avsluta_knapp = Button(bottomFrame, text = "Avsluta")
 avsluta_knapp.pack(side="right")
-
-def check():
-
-    x = str(ment.get())
-    c = paliCheck.check(x)
-
-    if c == True:
-        svarLabel.config(text="Din inmatning är ett Palindrome")
-
-    else:
-        svarLabel.config(text="Din inmatning är inte ett Palindrome")
-
 
 mGui.mainloop()
    
