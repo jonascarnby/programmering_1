@@ -25,7 +25,7 @@ def check():
         svarLabel.config(text="Din inmatning är inte ett Palindrome")
 
 
-paliCheck.check
+ment = StringVar()
 
 mGui = Tk()
 mGui.geometry("800x300+300+300")
