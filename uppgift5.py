@@ -16,21 +16,20 @@ import JonasCarnbyUppgift3py3 as paliCheck
 def check():
 
     x = str(ment.get())
-    c = paliCheck.check(x)
+    arranged = paliCheck.arrange(x)
+    result = paliCheck.showresult(arranged)
+    
 
-    if c == True:
+    if result == True:
         svarLabel.config(text="Din inmatning är ett Palindrome")
 
     else:
-        svarLabel.config(text="Din inmatning är inte ett Palindrome")
+        svarLabel.config(text="Din inmatning är INTE ett Palindrome")
 
 def quit():
     result = messagebox.askyesno('Avsluta programmet', 'Vill du verkligen avsluta programmet?')
     if result == True:
         mGui.destroy() 
-
-
-ment = StringVar()
 
 mGui = Tk()
 mGui.geometry("800x300+300+300")
@@ -42,6 +41,7 @@ bottomFrame = Frame(mGui)
 bottomFrame.pack()
 bottomFrame.config(width="300")
 
+ment = StringVar()
 mGui.title("Palindrome?")
 
 topLabel = Label(topFrame, text = "Skriv in texten du vill kontrollera: ")
