@@ -16,6 +16,7 @@ import JonasCarnbyUppgift3py3 as paliCheck
 def check():
 
     x = str(ment.get())
+    x = x.lower()
     arranged = paliCheck.arrange(x)
     result = paliCheck.showresult(arranged)
     
@@ -25,6 +26,12 @@ def check():
 
     else:
         svarLabel.config(text="Din inmatning är INTE ett Palindrome")
+
+def save(result):
+
+    f = open("Palindromesave", 'w')
+    f.write(result)
+    f.close()
 
 def quit():
     result = messagebox.askyesno('Avsluta programmet', 'Vill du verkligen avsluta programmet?')
@@ -54,8 +61,9 @@ info_knapp = Button(topFrame, text = "Info")
 info_knapp.pack(side="left")
 
 svarLabel = Label(midFrame, text = "")
+svarLabel.pack()
 
-spara_knapp = Button(bottomFrame, text = "Spara Palindrome")
+spara_knapp = Button(bottomFrame, text = "Spara Palindrome", command = save)
 spara_knapp.pack(side="left")
 avsluta_knapp = Button(bottomFrame, text = "Avsluta", command = quit)
 avsluta_knapp.pack(side="right")
